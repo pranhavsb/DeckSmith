@@ -185,8 +185,6 @@ def blackjack_game():
         screen.fill((0, 128, 0))
         screen.blit(result_display, (WIDTH // 2 - result_display.get_width() // 2, HEIGHT // 2 - result_display.get_height() // 2))
         pygame.display.flip()
-
-        # Wait for a few seconds before continuing
         time.sleep(3)
 
 
