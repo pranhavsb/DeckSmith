@@ -1,0 +1,2 @@
+# emojack
+Blackjack with emojis.
