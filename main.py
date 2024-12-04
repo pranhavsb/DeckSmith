@@ -6,20 +6,20 @@ pygame.init()
 
 WIDTH, HEIGHT = pygame.display.Info().current_w - 100, pygame.display.Info().current_h - 100
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Emojack")
+pygame.display.set_caption("Emojack, A Blackjack Game")
 
 # Card VAlues
 card_values = {
     '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10,
     'J': 10, 'Q': 10, 'K': 10, 'A': 11
 }
-
+#useless for now
 card_emojis = {
     '2': '🂲', '3': '🂳', '4': '🂴', '5': '🂵', '6': '🂶', '7': '🂷', '8': '🂸', '9': '🂹', '10': '🂺',
     'J': '🂻', 'Q': '🂽', 'K': '🂾', 'A': '🂡'
 }
 
-# Random Deck
+# Random Deck(52 cards  )
 def create_deck():
     deck = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'] * 4
     random.shuffle(deck)
@@ -41,8 +41,8 @@ def calculate_hand_value(hand):
 # Display hands
 def display_hands(player_hand, dealer_hand, show_dealer_full_hand=False):
     font = pygame.font.Font(None, 48)
-    player_hand_text = ' '.join([card_emojis[card] for card in player_hand])
-    dealer_hand_text = ' '.join([card_emojis[card] for card in dealer_hand])
+    player_hand_text = ' '.join(str([card_values[card] for card in player_hand]))
+    dealer_hand_text = ' '.join(str([card_values[card] for card in dealer_hand]))
 
     player_hand_display = font.render(f"Player: {player_hand_text}  (Total: {calculate_hand_value(player_hand)})", True, (255, 255, 255))
 
@@ -84,7 +84,7 @@ def select_bet(player_money):
             if amount <= player_money:
                 pygame.draw.rect(screen, (255, 0, 0), rect)
                 pygame.draw.rect(screen, (0, 0, 0), rect, 3)
-                text = font.render(f"{amount} coins", True, (0, 0, 0))
+                text = font.render(f"{amount}", True, (0, 0, 0))
                 screen.blit(text, (rect.x + (rect.width - text.get_width()) // 2, rect.y + (rect.height - text.get_height()) // 2))
 
         pygame.display.flip()
@@ -165,7 +165,7 @@ def blackjack_game():
         dealer_score = calculate_hand_value(dealer_hand)
 
         if player_busted:
-            result_text = f"You busted! You lose. Bet: {bet} coins"
+            result_text = f"You busted! Careful next time! You lose. Bet: {bet} coins"
             player_money -= bet
         elif dealer_busted:
             result_text = f"Dealer busted! You win. Bet: {bet} coins"
@@ -177,7 +177,7 @@ def blackjack_game():
             result_text = f"You lose! Bet: {bet} coins"
             player_money -= bet
         else:
-            result_text = f"It's a tie! Bet: {bet} coins"
+            result_text = f"It's a tie(push)! Bet: {bet} coins"
 
         # Display result
         font = pygame.font.Font(None, 48)
@@ -206,5 +206,4 @@ def blackjack_game():
     pygame.quit()
     print("Game Over")
 
-# Run the game
 blackjack_game()
