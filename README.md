@@ -1,10 +1,10 @@
-# **Emojack: The Ultimate Blackjack Experience**
+# **DeckSmith: The Ultimate Blackjack Experience**
 
-Welcome to **Emojack**! A Blackjack game like no other — simple, intuitive, and thrilling, with that perfect balance of luck and strategy. Whether you're a seasoned gambler or a curious beginner, Emojack will immerse you in the world of Blackjack in a way that’s both exciting and rewarding. Remember, in the world of Blackjack, it’s all about playing the hand you’re dealt — and like Harvey Specter says, **"You don’t play the odds, you play the man"**.
+Welcome to **DeckSmith**! A Blackjack game like no other — simple, intuitive, and thrilling, with that perfect balance of luck and strategy. Whether you're a seasoned gambler or a curious beginner, DeckSmith will immerse you in the world of Blackjack in a way that’s both exciting and rewarding. Remember, in the world of Blackjack, it’s all about playing the hand you’re dealt — and like Harvey Specter says, **"You don’t play the odds, you play the man"**.
 
 ## **About the Game**
 
-**Emojack** is an interactive and fun Blackjack game built using Python and the Pygame library. The game is designed with a fresh, modern look and feel, providing the player with a smooth and engaging experience. With a dynamic deck, various betting options, and a challenge against the dealer, it’s all about making the right decisions at the right time!
+**DeckSmith** is an interactive and fun Blackjack game built using Python and the Pygame library. The game is designed with a fresh, modern look and feel, providing the player with a smooth and engaging experience. With a dynamic deck, various betting options, and a challenge against the dealer, it’s all about making the right decisions at the right time!
 
 The objective? Reach 21, or get as close as possible, without going over, to beat the dealer. Sounds easy? Think again. The challenge lies in your decisions—*Hit, Stand, or Double?* As Harvey would say, **"Sometimes winning is about making the right move at the right time."**
 
@@ -45,7 +45,7 @@ The objective? Reach 21, or get as close as possible, without going over, to bea
 
 ## **Game Functions**
 
-Here’s a breakdown of all the key functions within **Emojack**:
+Here’s a breakdown of all the key functions within **DeckSmith**:
 
 ### 1. **`create_deck()`**
    - **Purpose:** Creates a shuffled deck of cards.
@@ -90,14 +90,14 @@ Avoid Risky Bets:
 Betting too high early on could end your game before you even start. Play it safe until you get a feel for the dealer’s strategy.
 Card Counting (Sort of):
 
-If you’re really good, try to keep track of high and low cards. This is, of course, against real-world casino rules, but Emojack is a friendly way to practice your counting skills.
+If you’re really good, try to keep track of high and low cards. This is, of course, against real-world casino rules, but DeckSmith is a friendly way to practice your counting skills.
 
 Make sure you’re not betting all your chips on a single hand. The game is more about consistency and smart betting than pure luck.
 ---
 
 ## **Conclusion**
 
-Whether you're looking for a casual way to pass the time or want to test your Blackjack skills against a challenging dealer, **Emojack** has you covered. With its dynamic features, engaging interface, and realistic gameplay, it offers a unique and exciting Blackjack experience that’s easy to pick up but hard to put down.
+Whether you're looking for a casual way to pass the time or want to test your Blackjack skills against a challenging dealer, **DeckSmith** has you covered. With its dynamic features, engaging interface, and realistic gameplay, it offers a unique and exciting Blackjack experience that’s easy to pick up but hard to put down.
 
 Just like in **Suits**, it's all about strategy, reading the game, and making the right moves at the right time. So, **grab your cards, don’t forget the suits, and may the luck of the draw be with you**! 🃏
 
