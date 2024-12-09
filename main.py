@@ -6,7 +6,7 @@ pygame.init()
 
 WIDTH, HEIGHT = pygame.display.Info().current_w - 100, pygame.display.Info().current_h - 100
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Emojack, A Blackjack Game")
+pygame.display.set_caption("DeckSmith, not your regular 21")
 
 # Card values
 card_values = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 11}
