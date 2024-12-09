@@ -1,16 +1,16 @@
 import pygame
 import random
 import time
-
+numlist = [16,15,17]
 pygame.init()
 
 WIDTH, HEIGHT = pygame.display.Info().current_w - 100, pygame.display.Info().current_h - 100
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("DeckSmith, not your regular 21 Game.")
+pygame.display.set_caption("Emojack, A Blackjack Game")
 
 # Card values
 card_values = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 11}
-# card_emojis = {card: f"[{card}]" for card in card_values.keys()}  # Placeholder emoji
+card_emojis = {card: f"[{card}]" for card in card_values.keys()}  # Placeholder emoji
 
 # Functions
 def create_deck():
@@ -56,8 +56,8 @@ def select_bet(player_money):
             100: draw_button("100", 250, HEIGHT - 200, 150, 50, (0, 0, 255)),
             500: draw_button("500", 450, HEIGHT - 200, 150, 50, (255, 255, 0)),
             1000: draw_button("1000", 650, HEIGHT - 200, 150, 50, (0, 255, 0)),
-            5000: draw_button("2000", 850, HEIGHT - 200, 150, 50, (255, 128, 0)),
-            10000: draw_button("5000", 1050, HEIGHT - 200, 150, 50, (128, 0, 255)),
+            5000: draw_button("5000", 850, HEIGHT - 200, 150, 50, (255, 128, 0)),
+            10000: draw_button("10000", 1050, HEIGHT - 200, 150, 50, (128, 0, 255)),
             player_money: draw_button("All In", 1250, HEIGHT - 200, 150, 50, (255, 0, 255)),
         }
         pygame.display.flip()
@@ -73,9 +73,9 @@ def select_bet(player_money):
 
 
 def blackjack_game():
-    player_money = 10000
+    player_money = 10050
     quit_game = False
-
+    kont = int(random.choice(numlist))
     while player_money > 0 and not quit_game:
         bet = select_bet(player_money)
         deck = create_deck()
@@ -103,14 +103,14 @@ def blackjack_game():
                             player_busted = True
                             game_over = True
                     elif stand_button.collidepoint(event.pos):
-                        while calculate_hand_value(dealer_hand) < 17:
+                        while calculate_hand_value(dealer_hand) < kont:
                             dealer_hand.append(deck.pop())
                         game_over = True
                     elif double_button.collidepoint(event.pos) and not doubled and player_money >= bet:
                         # Double the bet and deduct it from player money immediaty
                         doubled = True
 
-                        bet *= 2  
+                        bet *= 2  # Double bro's bet
 
                         # Adda card to the player and end bro's turn
                         player_hand.append(deck.pop())
@@ -118,8 +118,8 @@ def blackjack_game():
                             player_busted = True
                         game_over = True
 
-        # Dealer plays if the game isn't already over and plays like a real person(doesnt hit if value is above 15,16,17)
-        while calculate_hand_value(dealer_hand) < random.choice([15,16,17]) and not player_busted:
+        # Dealer plays if the game isn't already over and plays like a real person(doesnt hit if value is above 17)
+        while calculate_hand_value(dealer_hand) < kont and not player_busted:
             dealer_hand.append(deck.pop())
 
         # Display results
@@ -162,3 +162,4 @@ def blackjack_game():
     pygame.quit()
     print("Game Over")
 blackjack_game()
+
